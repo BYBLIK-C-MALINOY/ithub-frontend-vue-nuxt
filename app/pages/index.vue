@@ -16,7 +16,9 @@ const session = authClient.useSession()
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim
             velit mollit. Exercitation veniam consequat sunt nostrud amet.
         </Typography>
-        <NuxtLink to="/auth">Authorization</NuxtLink>
+        <button>
+            <NuxtLink to="/auth">Authorization</NuxtLink>
+        </button>
     </div>
     <img src="/images/tools.png" alt="tools image">
 </template>

@@ -32,5 +32,6 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 35px;
+    margin-top: 500px;
 }
 </style>

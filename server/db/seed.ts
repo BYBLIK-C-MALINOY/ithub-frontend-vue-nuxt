@@ -22,10 +22,24 @@ for (const user of usersData["users"]) {
                 image: user.image
             }
         })
+const userId = createdUser?.user?.id
 
-        // TODO
-        // Создавать записи в таблице bio используя kysely
-        // и соответствующие данные из user и createdUser
+    if (!userId) {
+      console.warn(`Нет userId для ${user.email}`)
+      continue
+    }
+
+    await database
+      .insertInto("bio")
+      .values({
+        firstName: user.firstName,
+        lastName: user.lastName,
+        userId: userId,
+        gender: user.gender as "male" | "female",
+      })
+      .execute()
+
+    console.log(`✅ Seeded: ${user.email}`)
     } catch (error) {
         console.error(error)
     }
